@@ -67,6 +67,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Spring Starter Security](https://docs.spring.io/spring-security/site/docs/current/reference/html5/)
 - [Spring Data JPA](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference)
 - [JPA - Hibernate](https://hibernate.org/orm/documentation/5.4/)
+- [JWT] (https://jwt.io/)
+- [Swagger 3.0.0] (https://swagger.io/docs/)
 - [InteliJ IDEA 2020.1.2 (Community Edition)](https://www.jetbrains.com/pt-br/idea)
 - [PostgreSQL server database](https://www.postgresql.org/download/)
 - [DBeaver IDE gerenciadora de databases](https://dbeaver.io/)
