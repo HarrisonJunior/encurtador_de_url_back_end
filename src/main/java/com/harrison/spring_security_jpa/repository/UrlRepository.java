@@ -10,9 +10,5 @@ import com.harrison.spring_security_jpa.model.Url;
 
 @Repository
 public interface UrlRepository extends JpaRepository<Url, Long> {
-
-	public Url findByCompleteUrl(String completeUrl);
-
 	public List<Url> findAllByUserUsername(String username);
-
 }

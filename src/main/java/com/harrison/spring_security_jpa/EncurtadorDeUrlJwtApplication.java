@@ -4,10 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EncurtadorDeUrlApplication {
-
+public class EncurtadorDeUrlJwtApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(EncurtadorDeUrlApplication.class, args);
+		SpringApplication.run(EncurtadorDeUrlJwtApplication.class, args);
 	}
 
 }

@@ -12,8 +12,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
 public class Url {
 	@Id
@@ -24,7 +22,7 @@ public class Url {
 	@Column(nullable = false, unique = true)
 	private String shortenedUrl;
 	@Column
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date registrationData;
 	@ManyToOne
 	private User user;

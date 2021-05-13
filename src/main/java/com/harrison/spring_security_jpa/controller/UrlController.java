@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.harrison.spring_security_jpa.exception.MyException;
 import com.harrison.spring_security_jpa.model.Url;
 import com.harrison.spring_security_jpa.service.URLService;
 
@@ -19,46 +20,23 @@ public class UrlController {
 	@Autowired
 	private URLService urlService;
 
-	/**
-	 * Método responsável por retornar todas as urls de um usuário
-	 * 
-	 * @param username
-	 * @return lista de url
-	 */
 	@GetMapping("/urls/{username}")
-	public List<Url> getAllUrlsByUsername(@PathVariable String username) {
+	public List<Url> getAllUrlsByUsername(@PathVariable String username){
 		return this.urlService.getAllUrlsByUsername(username);
 	}
 
-	/**
-	 * Método cadastra uma url
-	 * 
-	 * @param url
-	 * @return url cadastrada
-	 */
 	@PostMapping("/urls")
-	public Url registerUrl(@RequestBody Url url) {
-//		System.out.println(url.getId()  + " " + url.getUser().getId() + url.getUser().getUsername());
-		return this.urlService.registerUrl(url);
+	public Url cadasterUrl(@RequestBody Url url) throws MyException {
+		return this.urlService.cadasterUrl(url);
 	}
 
-	/**
-	 * Método atualiza uma url pré cadastrada
-	 * 
-	 * @param url
-	 */
-	@PutMapping("/urls")
-	public boolean updateUrl(@RequestBody Url url) {
-		return this.urlService.updateUrl(url);
+	@PutMapping("/urls/{id}")
+	public Url updateUrl(@RequestBody Url url,@PathVariable long id) throws MyException {
+		return this.urlService.updateUrl(url,id);
 	}
 
-	/**
-	 * Método deleta uma url pré cadastrada através do id fornecido
-	 * 
-	 * @param id
-	 */
 	@DeleteMapping("/urls/{id}")
-	public boolean deleteUrl(@PathVariable long id) {
+	public boolean deleteUrl(@PathVariable long id) throws MyException {
 		this.urlService.deleteUrl(id);
 		return true;
 	}
